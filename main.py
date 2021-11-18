@@ -1,7 +1,5 @@
 import smtplib
-from email import encoders
 from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
 
@@ -32,7 +30,8 @@ def main():
     address = "test.accout1.python@gmail.com"
     email_subject = "Test Run"
 
-    with open("p.txt", "r") as f:
+    # Read the message to be sent over email.
+    with open("message.txt", "r") as f:
         body_text = f.read()
 
 
@@ -47,6 +46,7 @@ def main():
         # To
         # Subject
         # Body
+
     msg = MIMEMultipart()
     msg['From'] = address
     msg['To'] = address
@@ -58,7 +58,6 @@ def main():
     # Port number (587) with SSL port numbers (587) with TSL
     # Server parameters --> Host            Port
     server = smtplib.SMTP('smtp.gmail.com', 587)
-
 
     # Start process
     server.starttls()
