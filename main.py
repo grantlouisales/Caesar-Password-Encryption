@@ -72,7 +72,7 @@ def main():
     address = "test.accout1.python@gmail.com"
     email_subject = "Test Run"
     body_text = get_body_text()
-    shift = 23
+    shift = 4
     account_password = get_password_for_account()
 
     # Encrypt the password and put it in the txt file.
